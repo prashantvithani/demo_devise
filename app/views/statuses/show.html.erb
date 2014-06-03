@@ -1,0 +1,15 @@
+<%= link_to("<< Back to list", {:action => 'index'}, :class => 'back-link')%>
+<div class = "status show">
+	<h2>Show status</h2>
+
+	<table summary = "status detail view"> 
+		<tr>
+			<th>Name</th>
+			<td><%= @status.user_id%></td>
+		</tr>
+		<tr>
+			<th>Status</th>
+			<td><%= @status.content%></td>
+		</tr>
+	</table>
+</div>

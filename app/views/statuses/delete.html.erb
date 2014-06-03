@@ -1,0 +1,14 @@
+<%= link_to("<< Back to list", {:action => 'index'}, :class => 'back-link')%>
+
+<div class ="status delete">
+	<h2>Delete status</h2>
+
+	<%= form_for(:status, :url => {:action => 'destroy', :status_id => @status.id}) do |f| %>
+		<p>Are you sure you want to delete this status?</p>
+		<p class = "reference-name"><%= @status.user_id %></p>
+
+		<div class = "form-buttons">
+			<%= submit_tag("Delete status")%>
+		</div>
+	<%end%>
+</div>

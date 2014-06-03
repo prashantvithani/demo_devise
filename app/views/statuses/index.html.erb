@@ -1,0 +1,19 @@
+<% if !flash[:notice].blank? %>
+	<div class = "notice">
+		<%= flash[:notice] %>
+	</div>
+<%end%>
+<div class = "status list">
+	<h2>Status</h2>
+	<%= link_to("Add New", {:action => 'new', :class => 'action new'})%>
+	<% @statuses.each do |status|%>
+		<p><%= status.content %></p> <br />
+		<div>
+			<%= status.created_at%>
+			<%= link_to("show", {:action => 'show', :status_id => status.id}, :class => 'action show') %>
+			<%= link_to("Edit", {:action => 'edit', :status_id => status.id}, :class => 'action edit') %>
+			<%= link_to("Delete", {:action => 'delete', :status_id => status.id}, :class => 'action delete') %>
+		</div>
+		<hr>
+	<% end -%>
+</div>

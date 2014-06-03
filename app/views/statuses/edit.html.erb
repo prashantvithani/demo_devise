@@ -1,0 +1,12 @@
+<%= link_to("<< Back to list", {:action => 'index', :class => 'back-link'})%>
+
+<div class = "status new">
+	<h2>Edit status</h2>
+	
+	<%= form_for(:status, :url => {:action =>'update', :status_id => @status.id}) do |f|%>	
+	<%= render(:partial => "shared/form", :locals => {:f => f})%>
+	<div>
+	<%= submit_tag("update status")%>
+	</div>
+	<%end%>
+</div>
