@@ -7,7 +7,7 @@ gem 'rails', '3.2.16'
 
 gem 'mysql2'
 gem 'devise'
-gem 'activeadmin'
+gem 'activeadmin', github: "gregbell/active_admin"
 gem 'meta_search', '>=1.1.0.pre'
 
 # Gems used only for assets and not required
@@ -22,7 +22,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+gem "jquery-ui-rails"
+# gem "jquery-rails"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

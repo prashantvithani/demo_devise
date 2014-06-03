@@ -1,10 +1,19 @@
 DemoDevise::Application.routes.draw do
+  root to: 'statuses#index'
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
 
   resources :statuses
   devise_for :users
+  ActiveAdmin.routes(self)
 
-  root to: 'statuses#index'
-
+ 
+  devise_scope :user do
+    get 'register', to: 'devise/registrations#new', as: :register
+    get 'login', to: 'devise/sessions#new', as: :login
+    get 'logout', to: 'devise/sessions#destroy', as: :logout
+  end
   # get ':controller(/:action(/:id(.:format)))'
   # post ':controller(/:action(/:id(.:format)))'
   get '/statuses/show/:status_id', to: 'statuses#show'
