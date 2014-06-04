@@ -206,5 +206,5 @@ ActiveAdmin.setup do |config|
   #
   # config.filters = true
 
-
+  config.allow_comments = false
 end
